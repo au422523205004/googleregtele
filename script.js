@@ -4,7 +4,7 @@
    STEP: after you deploy Code.gs as a Web app, paste its URL below.
    It looks like: https://script.google.com/macros/s/AKfy.../exec
 ------------------------------------------------------------------- */
-const SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyy2S8fLwG6scbL2qVYJ0w6S5UXKxpQOJXmjbXqVWPcYJtNdKbe4_HOOpubfQGzTV9a/exec";
 
 const form = document.getElementById("entry-form");
 const statusEl = document.getElementById("status");
