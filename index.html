@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Department register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+
+    <section class="intro">
+      <h1>Department register</h1>
+      <p>Fill in the details and press <strong>Add to sheet</strong>. Each entry is saved as a new row in your Google Sheet.</p>
+
+      <div class="preview" aria-hidden="true">
+        <p class="preview-label">Next row in your sheet</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Gender</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="pv-fullName">&mdash;</td>
+              <td id="pv-department">&mdash;</td>
+              <td id="pv-gender">&mdash;</td>
+              <td id="pv-city">&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <form id="entry-form" novalidate>
+
+        <div class="field">
+          <label for="fullName">Name</label>
+          <input type="text" id="fullName" name="fullName" autocomplete="name" maxlength="100" aria-describedby="fullName-error">
+          <p class="error" id="fullName-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="department">Department name</label>
+          <input type="text" id="department" name="department" autocomplete="organization-title" maxlength="100" aria-describedby="department-error">
+          <p class="error" id="department-error"></p>
+        </div>
+
+        <fieldset class="field" aria-describedby="gender-error">
+          <legend>Gender</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="gender" value="Male"><span>Male</span></label>
+            <label class="choice"><input type="radio" name="gender" value="Female"><span>Female</span></label>
+            <label class="choice"><input type="radio" name="gender" value="Other"><span>Other</span></label>
+            <label class="choice"><input type="radio" name="gender" value="Prefer not to say"><span>Prefer not to say</span></label>
+          </div>
+          <p class="error" id="gender-error"></p>
+        </fieldset>
+
+        <div class="field">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" autocomplete="address-level2" maxlength="100" aria-describedby="city-error">
+          <p class="error" id="city-error"></p>
+        </div>
+
+        <button type="submit" id="submit-btn">Add to sheet</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
